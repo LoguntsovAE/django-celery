@@ -1,0 +1,21 @@
+{% extends "mail_templated/base.tpl" %}
+
+{% load absolute_url %}
+
+{% block subject %}
+Hello, {{ c.customer_first_name | capfirst }}! We've missed you at ELK Academy.
+{% endblock %}
+
+{% block body %}
+Dear {{ c.customer_first_name | capfirst }},
+
+We hope you're doing well! We noticed you haven't scheduled or attended a lesson in the past week. Learning is a continuous journey, and we encourage you to stay on track.
+
+Jump back in and plan your next lesson in the dashboard at {% absolute_url "home" %}#schedule.
+
+We're here to support you every step of the way!
+
+Best wishes,
+ELK Academy
+Education + Love = Knowledge
+{% endblock %}
